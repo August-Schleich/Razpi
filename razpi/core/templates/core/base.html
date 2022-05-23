@@ -8,15 +8,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://kit.fontawesome.com/f99e479477.js" crossorigin="anonymous"></script>
     </head>
     <body>
-      <nav class= "border-b border=grey-300">
-        <div class="max-w-6xl mx-auto py-2 px-6 xl:px-0 flex items-center justify-between">
+        {% comment %} <nav class="border=white-300">
+        <div class="max-w-6xl mx-auto  px-6 xl:px-0 flex items-center justify-between">
+            <a href="#" class="py-2 text-lg text-pink-700 font-semibold">Razpi</a>
+        </div>
+        </nav> {% endcomment %}
+      <nav class= "border=grey-300">
+        <div class="max-w-6xl mx-auto  px-6 xl:px-0 flex items-center justify-between">
             <div class="menu-left flex items-center space-x-6">
-                <a href="#" class="py-4 text-lg text-pink-700 font-semibold">Razpi</a>
-                <ul class="flex items-center space-x-4">
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">About</a></li>
+                <a href="#" class="py-2 text-lg text-pink-700 font-semibold">Razpi</a>
+                <ul class="flex items-center space-x-1">
+                <li class="hover:bg-green-700  hover:text-white px-4 py-4"><a href="#">Shop</a></li>
+                <li class="hover:bg-stone-700  hover:text-white px-4 py-4"><a href="#">About</a></li>
                 </ul>
             </div>
             <div class="menu-right flex items-center space-x-4">
@@ -49,19 +55,19 @@
         <footer class = "bg-gray-100">
         <div class="max-w-6xl mx-auto py-10 px-6 xl:px-0 md:flex justify-between">
             <div class= "footer-left mb-12 md:mb-0">
-                <h2 class="mb-5 uppercase text-lg">About us</h2>
-                <p class="text-blue-300 text-center">lorum ipsum dolor sit amet, consectetur adipis occ</p>
+                <h2 class="mb-3 uppercase text-lg">About us</h2>
+                <p class="text-purple-500 text-center">lorum ipsum dolor sit amet, consectetur adipis occ</p>
             </div>
             {% comment %} <div class="text-center">
                 <p class="text-blue-700 text-center">Built By August ©2022</p>
             </div> {% endcomment %}
 
             <div class="footer-right mb-12 md:mb-0">
-                <h2 class="mb-5 uppercase text-lg">Social links</h2>
+                <h2 class="mb-3 uppercase text-lg">Social links</h2>
                 <ul class="space-y-2">
-                    <li><a href="#" class="text-purple-800 hover:text-purple-800">Twitter</a></li>
-                    <li><a href="#" class="text-purple-800 hover:text-purple-800">LinkedIn</a></li>
-                    <li><a href="#" class="text-purple-800 hover:text-purple-800">GitHub</a></li>
+                    <li><a href="#" class="text-purple-800 hover:text-purple-800"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#" class="text-purple-800 hover:text-purple-800"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="#" class="text-purple-800 hover:text-purple-800"><i class="fa-brands fa-github"></i> GitHub</a></li>
                 </ul>
             </div>
         
