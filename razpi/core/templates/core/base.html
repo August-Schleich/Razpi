@@ -22,7 +22,7 @@
             <div class="menu-left flex items-center space-x-6">
                 {% comment %} <a href="#" class="py-2 text-lg text-pink-700 font-semibold">RazPi</a> {% endcomment %}
                 <ul class="flex items-center space-x-1">
-                <li class="hover:bg-green-700  hover:text-white px-3 py-3"><a href="#">Shop</a></li>
+                <li class="hover:bg-pink-700  hover:text-white px-3 py-3"><a href="#">Shop</a></li>
                 <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="#">About</a></li>
                 </ul>
             </div>
@@ -42,26 +42,28 @@
         
         </div>
       </nav>
-
       <main>
-        <header class = "text-center g:py-20: bg-stone-200">
+        {% block content%}
+      {% comment %} <main>
+         <header class = "text-center g:py-20: bg-stone-200">
             <div class="max-width-3xl mx-auto flex  ">
-                {% comment %} <div>
+                <div>
                 <img class="img-responsive m-auto object-cover flex "
                 src="https://assets.raspberrypi.com/static/default-opengraph-f1d3121abeef861889c52dd4a2813df9.png"> 
-                </div> {% endcomment %}
+                </div> 
                 <div class="py-5 px-5 text-center ">
-                <p class="mb-2 px-4 text-2xl lg:text-4xl text-zinc-500 inline-block">Welcome to<p class ="text-2xl lg:text-4xl text-pink-700 inline-block">RazPi</p></p>
+                <p class="mb-2 p-1 text-2xl lg:text-4xl text-zinc-500 inline-block">Welcome to <p class ="text-2xl p-1 lg:text-4xl text-pink-700 inline-block"> RazPi</p> </p>
                 <p class="mb-10 px-4 text-2lg lg:text-1xl  text-zinc-800 ">From industries large and small, to the kitchen table tinkerer, to the classroom coder, we make computing accessible and affordable for everybody.</p>
                 <a href="#" class=" inline-block mb-2 bg-blue-500   hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"> Buy Raspberry Pi</a>
                    
                   
             </div>
             </div>
-        </header>
-      </main>
+        </header>  
+      </main> {% endcomment %}
         
-
+       {% endblock  %}
+      </main>
         <footer class = "bg-gray-100">
         <div class="max-w-6xl mx-auto py-10 px-6 xl:px-0 md:flex justify-between">
             <div class= "footer-left mb-12 md:mb-0">
