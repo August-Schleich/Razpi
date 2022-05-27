@@ -5,6 +5,6 @@ from core.views import frontpage,home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',frontpage,name="frontpage"),
-    path('/home',home, name="home")
+    path('',home,name="home"),
+    path('home',home, name="home")
 ]
