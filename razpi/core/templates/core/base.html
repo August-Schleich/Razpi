@@ -22,8 +22,8 @@
             <div class="menu-left flex items-center space-x-6">
                 {% comment %} <a href="#" class="py-2 text-lg text-pink-700 font-semibold">RazPi</a> {% endcomment %}
                 <ul class="flex items-center space-x-1">
-                <li class="hover:bg-pink-700  hover:text-white px-3 py-3"><a href="#">Shop</a></li>
-                <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="#">About</a></li>
+                <li class="hover:bg-pink-700  hover:text-white px-3 py-3"><a href="{% url 'shop' %}">Shop</a></li>
+                <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="{% url 'shop' %}">About</a></li>
                 </ul>
             </div>
             <div class="menu-right flex items-center space-x-4 ">
@@ -67,7 +67,7 @@
         <footer class = "bg-gray-100">
         <div class="max-w-6xl mx-auto py-10 px-6 xl:px-0 md:flex justify-between">
             <div class= "footer-left mb-12 md:mb-0">
-                <h2 class="mb-3 uppercase text-lg">About us</h2>
+                <h2 class="mb-3  text-lg">About us</h2>
                 <p class="text-pink-800 text-center">lorum ipsum dolor sit amet, consectetur adipis occ</p>
             </div>
             {% comment %} <div class="text-center">
@@ -75,7 +75,7 @@
             </div> {% endcomment %}
 
             <div class="footer-right mb-12 md:mb-0">
-                <h2 class="mb-3 uppercase text-lg">Social links</h2>
+                <h2 class="mb-3 text-lg">Social links</h2>
                 <ul class="space-y-2">
                     <li><a href="#" class="text-pink-800 hover:text-green-800"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
                     <li><a href="#" class="text-pink-800 hover:text-green-800"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
