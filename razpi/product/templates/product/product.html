@@ -4,7 +4,7 @@
 {% block content %}
 <div class="max-w-6xl flex flex-wrap mx-auto py-6 px-6 xl:px:0">
     <div class ="images w-full mb-6 lg:mb-0 lg:w-3/5">
-    <img class="img-responsive rounded-xl" src="https://assets.raspberrypi.com/static/default-opengraph-f1d3121abeef861889c52dd4a2813df9.png">
+    <img class="img-responsive rounded-xl" src="#" alt="Im Not here">
     </div>
     <div class="information w-full lg:w-2/8 lg:p-6">
         <h1 class="text-2xl">{{product.name}}</h1>
@@ -13,7 +13,16 @@
         {% if product.description %}
         <p class="mt-6 text-gray-700">{{ product.description }}</p>
         {% endif %}
-        <a href="#" class="mt-6 inline-block px-4 py-2 rounded-xl bg-pink-700 text-white hover:bg-pink-900">Add to cart</a>
+
+    <a 
+        href="#" 
+        class="mt-6 inline-block px-4 py-2 rounded-xl bg-pink-700 text-white hover:bg-pink-900"
+        hx-get="{% url 'add_to_cart' product.id %}"
+        hx-target="#menu-cart-button"
+        hx-swap="outerHTML"
+        >
+        Add to cart
+    </a>
 
     </div>
 </div>
