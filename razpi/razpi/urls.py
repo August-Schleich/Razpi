@@ -10,5 +10,5 @@ urlpatterns = [
     path('home/',home, name="home"),
     path('shop/',shop,name="shop"),
     path('about/',about,name="about"),
-    path('product/', product, name="product")
+    path('shop/<slug:slug>/', product, name="product")
 ]

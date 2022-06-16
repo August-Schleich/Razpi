@@ -33,4 +33,6 @@ class Product(models.Model):
     
     
     
-    
+    def get_display_price(self):
+        return self.price / 100
+        
