@@ -3,10 +3,10 @@
 
 {% block content %}
 <div class="max-w-6xl flex flex-wrap mx-auto py-6 px-6 xl:px:0">
-    <div class ="images w-full mb-6 lg:mb-0 lg:w-3/5">
-    <img class="img-responsive rounded-xl" src="#" alt="Im Not here">
+    <div class ="images w-full mb-6 lg:mb-0 lg:w-3/5 p-5" >
+    <img class="img-responsive rounded-xl" src="{{product.image.url}}" >
     </div>
-    <div class="information w-full lg:w-2/8 lg:p-6">
+    <div class="information w-full lg:w-2/5 lg:p-6 lg:mt-10">
         <h1 class="text-2xl">{{product.name}}</h1>
 
         <p class="mt-1 text-gray-400">{{ product.get_display_price }}</p>

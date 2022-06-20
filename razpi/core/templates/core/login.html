@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<div class="max-w-lg mx-auto flex flex-wrap p-6" >
+    <div class="w-full bg-gray-100 p-6 rounded-xl">
+        <h1 class="mb-6 text-2xl">Log In</h1>
+        <form class="space-y-3" method="post" action=".">
+            
+              <div>
+                <label>Email</label>
+                <input type="email" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" placeholder="Email" required>
+              </div>
+
+              <div>
+                <label>Password</label>
+                <input type="password" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" placeholder="Password" required>
+              </div>
+
+             
+             <div class="p-6 bg-red-200 text-red-800 rounded-xl">
+                <p>this is an error message</p>
+            </div>
+           
+
+             <div >
+                 <button class="py-3 px-5 rounded-xl text-white bg-pink-700 hover:bg-pink-900">Log In</button>
+            </div>
+
+            
+</div>
+{% endblock content %}
