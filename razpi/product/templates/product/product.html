@@ -13,6 +13,19 @@
         {% if product.description %}
         <p class="mt-6 text-gray-700">{{ product.description }}</p>
         {% endif %}
+        <br>
+        {% if product.specs %}
+        
+        <ol class="mt-1 text-gray-700 text-sm">
+            </li> {{product.specs|linebreaksbr|urlize|safe}}<li>
+         </ol>
+        {% endif %}
+        {% if product.rich_specs %}
+        
+        <ol class="mt-1 text-gray-700 text-sm">
+            </li> {{product.rich_specs|safe}}<li>
+         </ol>
+        {% endif %}
 
     <a 
         href="#" 

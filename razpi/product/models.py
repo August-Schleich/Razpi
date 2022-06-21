@@ -2,8 +2,9 @@ from re import T
 from django.db import models
 from PIL import Image
 from io import BytesIO
-
+from ckeditor.fields import RichTextField 
 from django.core.files import File
+
 
 class Category(models.Model):
     name= models.CharField(max_length=255)
@@ -22,6 +23,8 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     slug= models.SlugField()
     description = models.TextField(blank=True,null=True)
+    specs=models.TextField(blank=True,null=True)
+    rich_specs = RichTextField(blank=True,null=True)
     price = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to="uploads/", blank=True, null=True)
