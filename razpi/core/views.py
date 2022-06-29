@@ -2,6 +2,7 @@ from django.db.models import Q
 from nis import cat
 from django.shortcuts import render
 from product.models import Product, Category
+
 def frontpage(request):
     return render(request, 'core/base.html')
 
@@ -51,4 +52,3 @@ def about(request):
 
 
 
-    
