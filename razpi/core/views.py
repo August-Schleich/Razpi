@@ -18,7 +18,8 @@ def signup(request):
 def login(request):
     return render(request,"core/login.html")
 
-
+def news(request):
+    return render(request,"core/news.html")
 
 def shop(request):
     categories = Category.objects.all()
