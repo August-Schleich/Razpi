@@ -28,6 +28,10 @@
                 <ul class="flex items-center space-x-1">
                 <li class="text-pink-700 hover:bg-pink-700  hover:text-white px-3 py-3"><a href="{% url 'shop' %}">Shop</a></li>
                 <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="{% url 'about' %}">About</a></li>
+
+                {% if request.user.is_authenticated%}
+                <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="{% url 'logout' %}">Log Out</a></li>
+                    {% endif %}
                 </ul>
             </div>
             <div class="menu-right flex items-center space-x-4 ">

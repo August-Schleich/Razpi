@@ -7,26 +7,48 @@
     <div class="w-full bg-gray-100 p-6 rounded-xl">
         <h1 class="mb-6 text-2xl">Signup</h1>
         <form class="space-y-3" method="post" action=".">
-            
+            {% csrf_token %}
+              <div>
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Username" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" >
+              </div>
+              <div>
+                <label>First name</label>
+                <input type="text" name="first_name" placeholder="First" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl"  >
+              </div>
+
+              <div>
+                <label>Last name</label>
+                <input type="text" name="last_name" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" placeholder="Last" >
+              </div>
               <div>
                 <label>Email</label>
-                <input type="email" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" placeholder="Email" required>
+                <input type="email" name="email" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" placeholder="Email" >
               </div>
 
               <div>
                 <label>Password</label>
-                <input type="password" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" placeholder="Password" required>
+                <input type="password" name= "password1"class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" placeholder="Password" >
               </div>
 
               <div>
                 <label>Confirm Password</label>
-                <input type="email" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" placeholder="Confirm Password" required>
+                <input type="password" name= "password2" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" placeholder="Confirm Password" >
              </div>
-             
-             <div class="p-6 bg-red-200 text-red-800 rounded-xl">
-                <p>this is an error message</p>
-            </div>
-           
+             {% if form.errors %}
+                {% for field in form %}
+                  {% for error in field.errors %}
+                  <div class="p-6 bg-red-200 text-red-800 rounded-xl">
+                      <p>{{ error|escape }}</p>
+                  </div>
+                  {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                  <div class="p-6 bg-red-200 text-red-800 rounded-xl">
+                    <p>{{ error|escape }}</p>
+                  </div>
+                {% endfor %}
+              {% endif%}
 
              <div >
                  <button class="py-3 px-5 rounded-xl text-white bg-pink-700 hover:bg-pink-900">Submit</button>
