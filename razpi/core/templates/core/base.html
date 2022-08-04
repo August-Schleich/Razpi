@@ -28,19 +28,16 @@
                 <ul class="flex items-center space-x-1">
                 <li class="text-pink-700 hover:bg-pink-700  hover:text-white px-3 py-3"><a href="{% url 'shop' %}">Shop</a></li>
                 <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="{% url 'about' %}">About</a></li>
-
-                {% if request.user.is_authenticated%}
-                <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="{% url 'logout' %}">Log Out</a></li>
-                    {% endif %}
                 </ul>
             </div>
             <div class="menu-right flex items-center space-x-4 ">
-                <ul class="flex">
-                    <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="https://www.raspberrypi.com/documentation/">Documentation</a></li>
-                    <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="https://www.raspberrypi.com/news/">News</a></li>
-                    <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="https://www.raspberrypi.org/">Foundation</a></li>
-                    <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="https://forums.raspberrypi.com/">Forums</a></li>
-                </ul>
+               <ul class="flex">
+                {% if request.user.is_authenticated %}
+                <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="{% url 'logout' %}">Logout</a></li>
+                {%else %}
+                <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+                </ul> 
                 <a class ="hover:text-pink-800"href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -74,16 +71,35 @@
         
        {% endblock  %}
       </main>
-        <footer class = "bg-gray-100">
-        <div class="max-w-6xl mx-auto py-10 px-6 xl:px-0 md:flex justify-between">
+        <footer class = "bg-gray-100 mt-auto mb-0">
+        <div class="max-w-6xl mx-auto py-10 px-6 xl:px-0 lg:flex justify-between">
             <div class= "footer-left mb-12 md:mb-0">
                 <h2 class="mb-3  text-lg">About us</h2>
-                <p class="text-pink-800 text-left max-w-md">lorum ipsum dolor sit amet, consectetur adipis occ lorum ipsum dolor sit amet et </p>
+                <p class="text-pink-800 text-left max-w-lg">Raspberry Pi removes the high entry cost to computing for 
+                    people across all demographics: while children can benefit from a computing education that previously wasn’t 
+                    open to them, many adults have also historically been priced out of using computers 
+                    for enterprise, entertainment and creativity. Raspberry Pi eliminates those barriers.</p>
             </div>
             {% comment %} <div class="text-center">
                 <p class="text-blue-700 text-center">Built By August ©2022</p>
             </div> {% endcomment %}
-
+            <div class="footer-center mb-3 md:mb-0">
+                <h2 class="mb-3 text-lg">Raspberry Pi Official</h2>
+            <ul class="space-y-2">
+                <li class="text-pink-800 hover:text-green-800"><a href="https://www.raspberrypi.com/documentation/">Documentation</a></li>
+                <li class="text-pink-800 hover:text-green-800 "><a href="https://www.raspberrypi.com/news/">News</a></li>
+                <li class="text-pink-800 hover:text-green-800 "><a href="https://www.raspberrypi.org/">Foundation</a></li>
+                <li class="text-pink-800 hover:text-green-800 "><a href="https://forums.raspberrypi.com/">Forums</a></li>
+            </ul>
+            </div>
+            <div class="footer-right mb-12 md:mb-0">
+                <h2 class="mb-3 text-lg">Account</h2>
+                <ul class="space-y-2">
+                    <li><a href="{% url 'signup' %}" class="text-pink-800 hover:text-green-800"></i> Sign up</a></li>
+                    <li><a href="#" class="text-pink-800 hover:text-green-800"></i> Login</a></li>
+                    <li><a href="#" class="text-pink-800 hover:text-green-800"></i> Logout</a></li>
+                </ul>
+            </div>
             <div class="footer-right mb-12 md:mb-0">
                 <h2 class="mb-3 text-lg">Social links</h2>
                 <ul class="space-y-2">
@@ -92,9 +108,17 @@
                     <li><a href="#" class="text-pink-800 hover:text-green-800"><i class="fa-brands fa-github"></i> GitHub</a></li>
                 </ul>
             </div>
+           
         
     </footer>
 
         <script src="https://unpkg.com/htmx.org@1.7.0"></script>
     </body>
 </html>
+
+{% comment %} <ul class="flex">
+    <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="https://www.raspberrypi.com/documentation/">Documentation</a></li>
+    <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="https://www.raspberrypi.com/news/">News</a></li>
+    <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="https://www.raspberrypi.org/">Foundation</a></li>
+    <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="https://forums.raspberrypi.com/">Forums</a></li>
+</ul> {% endcomment %}
