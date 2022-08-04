@@ -6,6 +6,7 @@ from django.contrib.auth import views
 from django.urls import path, include
 from core.views import frontpage,home,shop,about,signup, news
 from product.views import product
+from cart.views import cart, checkout
 from cart.views import add_to_cart
 from django.views.generic.base import RedirectView
 from django.contrib.staticfiles.storage import staticfiles_storage
@@ -20,6 +21,8 @@ urlpatterns = [
     path('login/',views.LoginView.as_view(template_name="core/login.html"), name="login"),
     path('home/',home, name="home"),
     path('shop/',shop,name="shop"),
+    path('cart/',cart,name="cart"),
+    path('checkout/',checkout,name="checkout"),
     path('news/', news,name="news"),
     path('about/',about,name="about"),
     path('shop/<slug:slug>/', product, name="product"),
