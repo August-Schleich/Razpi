@@ -14,19 +14,11 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 
 
 urlpatterns = [
+    path('', include('core.urls')),
+    path('cart/', include('cart.urls')),
     path('admin/', admin.site.urls),
-    path('',home,name="home"),
-    path('signup/',signup, name="signup"),
-    path('logout/', views.LogoutView.as_view(), name="logout"),
-    path('login/',views.LoginView.as_view(template_name="core/login.html"), name="login"),
-    path('home/',home, name="home"),
-    path('shop/',shop,name="shop"),
-    path('cart/',cart,name="cart"),
-    path('checkout/',checkout,name="checkout"),
     path('news/', news,name="news"),
     path('about/',about,name="about"),
-    path('shop/<slug:slug>/', product, name="product"),
-    path('add_to_cart/<int:product_id>/',add_to_cart, name="add_to_cart"),
     
     path(
         "razpi_icon.ico",

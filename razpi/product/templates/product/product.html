@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 {% extends "core/base.html" %}
-
+{% block title %}{{product.name}}{% endblock %}
 {% block content %}
 <div class="max-w-6xl flex flex-wrap mx-auto py-6 px-6 xl:px:0">
     <div class ="images w-full mb-6 lg:mb-0 lg:w-3/5 p-5" >
-    <img class="img-responsive rounded-xl" src="{{product.image.url}}" >
+    <img class="img-responsive rounded-xl" 
+    src="{% if product.image %}{{product.image.url}}{% else  %}'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640' {% endif %}" >
     </div>
     <div class="information w-full lg:w-2/5 lg:p-6 lg:mt-10">
         <h1 class="text-2xl">{{product.name}}</h1>
