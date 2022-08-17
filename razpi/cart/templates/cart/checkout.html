@@ -61,16 +61,13 @@
         {%for item in cart %}
        
         <div class="flex justify-between">
-            <p class="mb-1">{{ item.product.name }}</p>
-            {% comment %} <div class="quantity mt-2 flex items-center space-x-4">
-                <a href="#" class=""><i class="fa-solid fa-minus"></i></a>
-                <span class="">2</span>
-                <a href="#" class=""><i class="fa-solid fa-plus"></i></a>
-            </div>  {% endcomment %}
+           
+            <p class="mb-1 text-left"> <span class="pr-2">2</span> {{ item.product.name }}</p>
             <span class="mb-2 pt-1 ">${{ item.total_price }}</span>
         </div>
+        <hr class="pb-1">
             {% endfor %}
-            <hr>
+            
         <div class="mb-6 flex justify-between">
             <span class="font-semibold">Total</span>
             <span class="">${{cart.get_total_cost}}</span>

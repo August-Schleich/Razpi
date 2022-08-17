@@ -16,6 +16,7 @@
                 <div class="w-3/4 pl-6">
                     <div class="flex justify-between">
                             <a href="#" class="text-lg text-white">{{ item.product.name }}</a>
+                            
                             <span class="mb-6 pt-1 text-white">${{ item.total_price }}</span>
                     </div>
 
@@ -34,24 +35,23 @@
         </div>
 
             <div class="summary sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-8 bg-gray-100 rounded-xl p-6 mt-3">
-                <h2 class= "uppercase text-lg mb-5">summary</h2>
+                <h2 class= "uppercase text-lg mb-3">summary</h2>
                 {%for item in cart %}
                
-                <div class="flex justify-between">
-                    <p class="mb-1">{{ item.product.name }}</p>
-                    {% comment %} <div class="quantity mt-2 flex items-center space-x-4">
-                        <a href="#" class=""><i class="fa-solid fa-minus"></i></a>
-                        <span class="">2</span>
-                        <a href="#" class=""><i class="fa-solid fa-plus"></i></a>
-                    </div>  {% endcomment %}
+                <div class="flex justify-between mb-1">
+                    
+                    <p class="mb-1 "><span class="pr-2">2</span> {{ item.product.name }}</p>
                     <span class="mb-2 pt-1 ">${{ item.total_price }}</span>
                 </div>
+                <hr class="pb-1">
                     {% endfor %}
-                    <hr>
-                <div class="mb-6 flex justify-between">
+                   
+                <div class="mb-2 mt-2 flex justify-between">
                     <span class="font-semibold">Total</span>
                     <span class="">${{cart.get_total_cost}}</span>
+                   
                 </div>
+               
                 <a href="{% url 'checkout' %}" class="inline-block mt-1 px-6 py-2 rounded-xl bg-pink-700 hover:bg-pink-800 text-white">Checkout</a>
                 <a href="{% url 'shop' %}" class="inline-block mt-1 px-6 py-2 rounded-xl bg-pink-700 hover:bg-pink-800 text-white">Continue shopping</a>
             </div>
