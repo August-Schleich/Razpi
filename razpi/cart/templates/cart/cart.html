@@ -6,56 +6,54 @@
  <section class="products bg-gray-800">
         <div class=" max-w-6xl mx-auto flex flex-wrap items-start py-6 px-6 xl:px-0 bg-gray-800" >
           <div class=" products w-full lg:w-3/4">
+            
+            {% for item in cart %}
             <div class="product mb-6 flex pr-6">
                 <a href="#" class ="w-1/4">
-                    <img class ="hover:shadow-lg rounded-xl" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdxz0zjfIlU_EeZ3xJD2AMsamkv_SpZogxTw&usqp=CAU">
+                    <img class ="hover:shadow-lg rounded-xl" src="{{ item.product.get_thumbnail}}">
                 </a>
 
                 <div class="w-3/4 pl-6">
                     <div class="flex justify-between">
-                        <a href="#" class="text-lg text-white">Product name</a>
-                        <span class="mb-6 pt-1 text-white">$10.99</span>
+                            <a href="#" class="text-lg text-white">{{ item.product.name }}</a>
+                            <span class="mb-6 pt-1 text-white">${{ item.total_price }}</span>
+                    </div>
+
+                    <hr>
+                    <div class="quantity mt-6 flex items-center space-x-4">
+                        <a href="#" class="text-white"><i class="fa-solid fa-minus"></i></a>
+                        <span class="text-white">2</span>
+                        <a href="#" class="text-white"><i class="fa-solid fa-plus"></i></a>
+                    </div> 
+                   </div>
                 </div>
-
-                <hr>
-                <div class="quantity mt-6 flex items-center space-x-4">
-                    <a href="#" class="text-white"><i class="fa-solid fa-minus"></i></a>
-                    <span class="text-white">2</span>
-                    <a href="#" class="text-white"><i class="fa-solid fa-plus"></i></a>
-                </div> 
-            </div>
-         </div>
+            {% endfor %}
         {% comment %} ### TEST STATIC PRODUCT DISPLAYS ### {% endcomment %}
-         <div class="product mb-6 flex pr-6">
-            <a href="#" class ="w-1/4">
-                <img class ="hover:shadow-lg rounded-xl" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdxz0zjfIlU_EeZ3xJD2AMsamkv_SpZogxTw&usqp=CAU">
-            </a>
-
-            <div class="w-3/4 pl-6">
-                <div class="flex justify-between">
-                    <a href="#" class="text-lg text-white">Product name</a>
-                    <span class="mb-6 pt-1 text-white">$10.99</span>
-            </div>
-
-            <hr>
-            <div class="quantity mt-6 flex items-center space-x-4">
-                <a href="#" class="text-white"><i class="fa-solid fa-minus"></i></a>
-                <span class="text-white">2</span>
-                <a href="#" class="text-white"><i class="fa-solid fa-plus"></i></a>
-            </div> 
-        </div>
-     </div>
+   
           {% comment %} ################# {% endcomment %}
         </div>
 
-            <div class="summary w-full w-1/2 p-6 bg-gray-100 rounded-xl mt-3">
+            <div class="summary sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-8 bg-gray-100 rounded-xl p-6 mt-3">
                 <h2 class= "uppercase text-lg mb-5">summary</h2>
+                {%for item in cart %}
+               
+                <div class="flex justify-between">
+                    <p class="mb-1">{{ item.product.name }}</p>
+                    {% comment %} <div class="quantity mt-2 flex items-center space-x-4">
+                        <a href="#" class=""><i class="fa-solid fa-minus"></i></a>
+                        <span class="">2</span>
+                        <a href="#" class=""><i class="fa-solid fa-plus"></i></a>
+                    </div>  {% endcomment %}
+                    <span class="mb-2 pt-1 ">${{ item.total_price }}</span>
+                </div>
+                    {% endfor %}
+                    <hr>
                 <div class="mb-6 flex justify-between">
                     <span class="font-semibold">Total</span>
-                    <span class="">$99.86</span>
+                    <span class="">${{cart.get_total_cost}}</span>
                 </div>
-                <a href="{% url 'checkout' %}" class="inline-block px-6 py-2 rounded-xl bg-pink-700 hover:bg-pink-800 text-white">Checkout</a>
-                <a href="{% url 'shop' %}" class="inline-block px-6 py-2 rounded-xl bg-pink-700 hover:bg-pink-800 text-white">Continue shopping</a>
+                <a href="{% url 'checkout' %}" class="inline-block mt-1 px-6 py-2 rounded-xl bg-pink-700 hover:bg-pink-800 text-white">Checkout</a>
+                <a href="{% url 'shop' %}" class="inline-block mt-1 px-6 py-2 rounded-xl bg-pink-700 hover:bg-pink-800 text-white">Continue shopping</a>
             </div>
         </div> 
       
