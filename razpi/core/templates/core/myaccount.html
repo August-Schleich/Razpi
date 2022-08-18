@@ -10,7 +10,8 @@
     <strong>Username:</strong> {{ request.user.username }}<br>
     <strong>E-mail:</strong> {{ request.user.email }}<br>
 
-    <a class ="text-blue-500" href="{% url 'edit_myaccount' %}">Edit</a>
+    <a class="inline-block mt-4 py-3 px-6 rounded-xl text-white bg-pink-800 hover:bg-pink-900" href="{% url 'edit_myaccount' %}">Edit</a>
+    </div>
     <hr>
 
     <h2 class= "my-6 text-xl">My orders</h2>
@@ -36,6 +37,7 @@
       
         </div>
         {% comment %} ###### TEST ORDERS  {% endcomment %}
+        
         <div class="mb-6 w-full">
             <div class="product mb-6 flex pr-6">
                 <a href="#" class="w-1/4">
@@ -54,6 +56,7 @@
             </div>
         </div>
         {% comment %} ###### TEST ORDER  {% endcomment %}
+        <hr>
         <div>
         <p class="text-lg">Date: 04.04.2022</p>
         <p class="text-lg">Total: $199.94</p>
