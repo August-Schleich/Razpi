@@ -1,4 +1,5 @@
-
+import re
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from django.db.models import Q
 from nis import cat
@@ -32,8 +33,24 @@ def signup(request):
     return render(request,"core/signup.html", {'form': form})
 
 
+@login_required
+def edit_myaccount(request):
+    if request.method == 'POST':
+        user = request.user
+        user.first_name = request.POST.get('first_name')
+        user.last_name =  request.POST.get('last_name')
+        user.email = request.POST.get('email')
+        user.username = request.POST.get('username')
+        user.save()
 
+        return redirect('myaccount')
+    return render(request, 'core/edit_myaccount.html')
 
+@login_required
+def myaccount(request):
+    return render(request,"core/myaccount.html")
+    
+    
 def login_old(request):
     return render(request,"core/login.html")
 
