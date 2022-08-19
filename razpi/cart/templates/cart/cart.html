@@ -8,30 +8,9 @@
           <div class=" products w-full lg:w-3/4">
             
             {% for item in cart %}
-            <div class="product mb-6 flex pr-6">
-                <a href="#" class ="w-1/4">
-                    <img class ="hover:shadow-lg rounded-xl" src="{{ item.product.get_thumbnail}}">
-                </a>
-
-                <div class="w-3/4 pl-6">
-                    <div class="flex justify-between">
-                            <a href="#" class="text-lg text-white">{{ item.product.name }}</a>
-                            
-                            <span class="mb-6 pt-1 text-white">${{ item.total_price }}</span>
-                    </div>
-
-                    <hr>
-                    <div class="quantity mt-6 flex items-center space-x-4">
-                        <a href="#" class="text-white"><i class="fa-solid fa-minus"></i></a>
-                        <span class="text-white">2</span>
-                        <a href="#" class="text-white"><i class="fa-solid fa-plus"></i></a>
-                    </div> 
-                   </div>
-                </div>
+            {% include 'cart/partials/cart_item.html' %}
             {% endfor %}
-        {% comment %} ### TEST STATIC PRODUCT DISPLAYS ### {% endcomment %}
-   
-          {% comment %} ################# {% endcomment %}
+      
         </div>
 
             <div class="summary sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-8 bg-gray-100 rounded-xl p-6 mt-3">
@@ -41,14 +20,25 @@
                 <div class="flex justify-between mb-1">
                     
                     <p class="mb-1 "><span class="pr-2">2</span> {{ item.product.name }}</p>
-                    <span class="mb-2 pt-1 ">${{ item.total_price }}</span>
+                    <span class="mb-2 pt-1 "
+                    
+                    
+                    >${{ item.total_price }}</span>
                 </div>
                 <hr class="pb-1">
+                
                     {% endfor %}
                    
                 <div class="mb-2 mt-2 flex justify-between">
                     <span class="font-semibold">Total</span>
-                    <span class="">${{cart.get_total_cost}}</span>
+                    <span 
+                        hx-get="{% url 'hx_cart_total' %}"
+                        hx-trigger="update-menu-cart from:body"
+                        hx-swap="innerHTML"
+                        >
+                        {% include 'cart/partials/cart_total.html' %}
+                    </span>
+                    
                    
                 </div>
                
