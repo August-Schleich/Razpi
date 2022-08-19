@@ -3,9 +3,9 @@
 {% block title %}Welcome{% endblock %}
 {% block content %}
 
-     <header class = "   mx-auto max-w-full xl:px-0 bg-stone-200">
+     <header class = "mx-auto max-w-full xl:px-0 bg-stone-200">
 
-            <div class="flex-row-reverse sm:flex md:flex lg:flex xl:flex max-w-full  mx-auto ">
+            <div class="flex-row-reverse sm:flex md:flex lg:flex xl:flex max-w-full mx-auto ">
                 <div class="m-auto mx-auto xl:w-1/2 lg:w-1/2 md:w-full sm:w-full text-center md:text-right lg:text-right xl:text-right" style="">
                     <div class="max-w-xl  pt-12 xl:pr-12 md:pr-12 lg:pr-12 sm:pb-12 p-4  ">
 
@@ -23,8 +23,8 @@
         </header> 
 
         <section class="products bg-gray-800">
-            <div class=" max-w-6xl mx-auto px-6 xl:px-0 " >
-                <div class=" products flex items-center flex-wrap">
+            <div class=" max-w-6xl mx-auto px-6 xl:px-0  " >
+                <div class=" products flex items-center flex-wrap ">
                     {% for product in products %}
                     
                     {% include 'product/partials/product_list_item.html' %}
@@ -33,5 +33,8 @@
                 </div>
             </div>
         </section>
+
+       
+       
 
 {% endblock content %}
