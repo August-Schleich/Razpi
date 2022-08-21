@@ -15,72 +15,38 @@
     <hr>
 
     <h2 class= "my-6 text-xl">My orders</h2>
+    {% for order in request.user.orders.all %}
     <div class="w-full mb-6 p-6 flex flex-wrap bg-gray-100 rounded-xl">
         <div class="mb-6 flex justify between">
-            <a href="#">Order id: 1 </a>
+            {% for item in order.items.all %}
+            <a href="#">Order id: {{order.id }} </a>
         </div>
         <div class="mb-6 w-full">
             <div class="product mb-6 flex pr-6">
                 <a href="#" class="w-1/4">
-                    <img class="hover:shadow-lg rounded-xl" src="1.jpg" alt="boom bitch im here">
+                    <img class="hover:shadow-lg rounded-xl" src="{{item.product.get_thumbnail}}" alt="boom bitch im here">
                 </a>
                 <div class="w-3/4 pl-6">
                     <div class="flex justify-between">
-                        <a href="#" class="text-lg">Product name</a>
+                        <a href="#" class="text-lg">{{item.product.name}}</a>
                         <p class="mb-6 pt-1 text-gray-400">$9.99</p>
                     </div>
                     <hr>
                     <div class="mt-4">
-                        Quantity: 1
+                        Quantity: {{ item.quantity }}
                     </div>
                 </div>
-      
+            {% endfor %}
         </div>
+       
         {% comment %} ###### TEST ORDERS  {% endcomment %}
-        
-        <div class="mb-6 w-full">
-            <div class="product mb-6 flex pr-6">
-                <a href="#" class="w-1/4">
-                    <img class="hover:shadow-lg rounded-xl" src="1.jpg" alt="boom bitch im here">
-                </a>
-                <div class="w-3/4 pl-6">
-                    <div class="flex justify-between">
-                        <a href="#" class="text-lg">Product name</a>
-                        <p class="mb-6 pt-1 text-gray-400">$9.99</p>
-                    </div>
-                    
-                    <hr>
-                    <div class="mt-4">
-                        Quantity: 1
-                    </div>
-                </div>
-            </div>
-        </div>
         {% comment %} ###### TEST ORDER  {% endcomment %}
         <hr>
         <div>
-        <p class="mt-2 text-lg">Date: 04.04.2022</p>
-        <p class="text-lg">Total: $199.94</p>
+        <p class="mt-2 text-lg">Date: {{ order.created_at }}</p>
+        <p class="text-lg">Total: $199.94</p> 
         </div>
     </div>
+    {% endfor %}
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {% endblock %}
