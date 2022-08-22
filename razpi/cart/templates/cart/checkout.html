@@ -53,9 +53,9 @@
                 
             </div>
 
-            <div class=" mb-6 p-6 bg-gray-100 rounded-xl">
-                <h2 class="mb-5 uppercase text-lg">Payment Information</h2>
-        </div>
+            <div class="text-red-500 w-1/2 mb-6 p-6 bg-gray-100 rounded-xl" id="errors">
+                <p class="text-black"> Please fill out all form fields before confirming checkout</p>
+            </div>
         
     </div>
     <div class="summary sm:w-full md:w-2/3 lg:w-2/3 xl:w-2/3 p-8 bg-gray-100 rounded-xl mt-3">
@@ -88,6 +88,7 @@
  {% block scripts %}
 <script type="application/javascript" src="https://js.stripe.com/v3/"></script>
 <script>
+  
     let el = document.querySelector('#errors')
 
     function validateForm(data) {
@@ -118,7 +119,19 @@
         }
 
         if (data.place === '') {
-            errors.push('Place is empty')
+            errors.push('Place/City is empty')
+        }
+
+        if (errors.length > 0) {
+            let html = '<ul>';
+            
+            errors.forEach((error) => {
+                html += '<li>' + error + '</li>';
+            })
+
+            el.innerHTML = html + '</ul>';
+        } else {
+            el.innerHTML = '';
         }
 
         return errors

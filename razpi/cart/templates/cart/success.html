@@ -1,0 +1,13 @@
+{% extends "core/base.html" %}
+{% block title %}Success{% endblock %}
+{% block content %}
+
+<div class="max-w-6xl  text-center py-6 px-6  bg-gray-100" >
+    
+    <div class="products w-full items-center rounded-xl ">
+        <h1 class="text-pink-800 mb-5 text-3xl">Success</h1>
+        <p class="text-black"> Thanks for shopping with razpi {{ request.user.username }}! Your order has been successfully placed. </p>
+        
+    </div>
+ </div>
+{% endblock %}
