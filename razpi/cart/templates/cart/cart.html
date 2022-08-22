@@ -6,11 +6,17 @@
 <section class="cart-section bg-gray-800">
         <div class=" max-w-6xl mx-auto flex flex-wrap items-start py-8 px-8 xl:px-0 bg-gray-800" >
           <div class=" products w-full lg:w-3/5">
-            
+            {% if cart|length > 0 %}
             {% for item in cart %}
             {% include 'cart/partials/cart_item.html' %}
             {% endfor %}
-      
+            {% else %}
+            
+            <div class="text-center">
+                <h1 class ="text-white text-2xl  py-8 px-8 "> No Items In Cart</h1>
+                <a href="{% url 'shop' %}"><button type="button" class="mx-auto py-1 px-5 rounded-xl text-white bg-blue-800 hover:bg-blue-900" >Shop</button><a>
+            </div> 
+           {% endif %}
         </div>
 
             <div class="mx-auto summary sm:w-full md:w-2/5 lg:w-2/5 xl:w-2/5 p-8 bg-gray-100 rounded-xl p-6 mt-3">
