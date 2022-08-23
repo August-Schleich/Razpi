@@ -47,7 +47,7 @@
                    
                 </div>
                
-                <a href="{% if user.is_authenticated%}{% url 'checkout' %}{%else%}{% url 'login' %}{% endif%}" class="inline-block mt-1 px-6 py-2 rounded-xl bg-pink-700 hover:bg-pink-800 text-white">Checkout</a>
+                <a href="{% if user.is_authenticated %}{% if cart|length > 0%}{% url 'checkout' %}{% else%}{%url 'shop' %}{% endif %} {%else%}{% url 'login' %}{% endif%}" class="inline-block mt-1 px-6 py-2 rounded-xl bg-pink-700 hover:bg-pink-800 text-white">Checkout</a>
                 
                 <a href="{% url 'shop' %}" class="inline-block mt-1 px-6 py-2 rounded-xl bg-pink-700 hover:bg-pink-800 text-white">Continue shopping</a>
             </div>

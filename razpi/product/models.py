@@ -12,6 +12,7 @@ class Category(models.Model):
     
     
     class Meta:
+        verbose_name_plural = 'Categories'
         ordering = ('name',)
         
     def __str__(self):
@@ -31,6 +32,7 @@ class Product(models.Model):
     thumbnail = models.ImageField(upload_to="uploads/", blank=True, null=True)
      
     class Meta:
+        
         ordering = ('-created_at',)
       
         
