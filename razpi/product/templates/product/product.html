@@ -4,7 +4,7 @@
 {% block content %}
 <div class="max-w-6xl flex flex-wrap mx-auto py-6 px-6 xl:px:0">
     <div class ="images w-full mb-6 lg:mb-0 lg:w-3/5 p-5" >
-    <img class="img-responsive rounded-xl" 
+    <img class="img-responsive w-full md:w-2/3 rounded-xl" 
     src="{% if product.image %}{{product.image.url}}{% else  %}'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640' {% endif %}" 
    >
     </div>
@@ -12,15 +12,7 @@
         <h1 class="text-2xl">{{product.name}} </h1> 
         
         <p class="mt-1 text-gray-400 justify-between" >${{ product.get_display_price }} </p>
-        {% comment %} <a 
-            href="#" 
-            class="mt-6 inline-block px-3 py-2 rounded-xl bg-pink-700 text-white hover:bg-pink-900"
-            hx-get="{% url 'add_to_cart' product.id %}"
-            hx-target="#menu-cart-button"
-            hx-swap="outerHTML"
-            >
-            Add to cart
-        </a> {% endcomment %}
+       
         {% if product.description %}
         <p class="mt-6 text-gray-700">{{ product.description }}</p>
         {% endif %}
