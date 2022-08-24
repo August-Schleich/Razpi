@@ -40,19 +40,29 @@ def start_order(request):
         cancel_url="http://127.0.0.1:8000/cart",
     ) 
     payment_intent = session.payment_intent
-
+    
+    first_name = data['first_name']
+    last_name = data['last_name']
+    email = data['email']
+    address = data['address']
+    zipcode = data['zipcode']
+    place = data['place']
+    phone = data['phone']
+       
     order = Order.objects.create(
                                 user=request.user,
-                                first_name=data['first_name'], 
-                                 last_name=data['last_name'],
-                                 email=data['email'], 
-                                 address=data['address'], 
-                                 place=data['place'],
-                                 zipcode=data['zipcode'],
-                                 phone=data['phone'],
-                                 payment_intent = payment_intent,
-                                 paid = True,
-                                 paid_amount =  total_price) 
+                                first_name=first_name, 
+                                 last_name=last_name,
+                                 email=email, 
+                                 address=address, 
+                                 place=place,
+                                 zipcode=zipcode,
+                                 phone=phone,) 
+    
+    order.payment_intent = payment_intent
+    order.paid_amount = total_price
+    order.paid = True
+    order.save()
     
     for item in cart:
         product = item['product']
