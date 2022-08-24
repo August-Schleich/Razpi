@@ -4,7 +4,7 @@ from PIL import Image
 from io import BytesIO
 from ckeditor.fields import RichTextField 
 from django.core.files import File
-
+from django.contrib.auth.models import User
 
 class Category(models.Model):
     name= models.CharField(max_length=255)
@@ -66,5 +66,14 @@ class Product(models.Model):
         thumbnail = File(thumb_io, name=image.name)
         
         return thumbnail
+    
+    
+class Review(models.Model):
+    product = models.ForeignKey(Product, related_name="reviews", on_delete=models.CASCADE)
+    rating = models.IntegerField(default=3)
+    content = models.TextField()
+    created_by = models.ForeignKey(User, related_name="reviews", on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
         
         
