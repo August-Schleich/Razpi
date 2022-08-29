@@ -42,6 +42,7 @@ def update_cart(request, product_id, action):
                 'price': product.price,
             },
             'total_price': (quantity * product.price) / 100,
+            
             'quantity': quantity,
         }
     else:
