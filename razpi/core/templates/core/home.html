@@ -51,7 +51,7 @@
             <div class=" max-w-6xl mx-auto px-6 xl:px-0  " >
                 <div class=" products flex items-center flex-wrap ">
                     {% for product in products %}
-                    {% if forloop.counter < 4 %}
+                    {% if forloop.counter < 5 %}
                     {% include 'product/partials/product_list_item.html' %}
                     {%endif%}
                     {% endfor %}
