@@ -1,4 +1,4 @@
-<div class="  w-full md:w-1/3 xl:w-1/4 p-6" >   
+<div class="w-full md:w-1/3 xl:w-1/4 p-6" >   
     <a href="{% url 'product' product.slug %}">
         <img style="height:225px;width:225px;object-fit:contain;"class="rounded-xl hover:shadow-lg w-full" src="{{product.get_thumbnail}}" >
         
@@ -9,8 +9,6 @@
         
         <a 
         class="text-green-500  hover:text-pink-800" 
-       
-        
         hx-get="{% url 'add_to_cart' product.id %}"
         hx-target="#menu-cart-button"
         hx-swap="outerHTML"
