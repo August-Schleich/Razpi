@@ -48,8 +48,8 @@
 
         <section class="products bg-stone-200 pb-12 max-w-full  xl:px-0 ">
             <h1 class="text-center text-zinc-800  text-white-600 text-5xl pt-8 md:pt-8 font-medium">New Products</h1>
-            <div class="max-w-7xl pt-5 pb-5 m-auto items-center ">
-                <div class="products flex flex-wrap px-8 "  >
+            <div class="max-w-7xl  pt-5 pb-5 m-auto items-center ">
+                <div class="products flex flex-wrap pl-14 md:pl-9 "  >
                     {% for product in products %}
                     {% if forloop.counter < 6 %}
                     {% include 'product/partials/product_list_item.html' %}
