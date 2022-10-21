@@ -4,9 +4,9 @@
 {% block content %}
 
 
-        <section class="products bg-gray-800 ">
-        <div class="  max-w-7xl mx-auto flex flex-wrap items-start py-6 px-6 xl:px-0 bg-gray-800" >
-            <div class=" filters pl-5 mt-3 mx-auto w-full lg:w-1/4  ">
+        <section class=" products bg-gray-800 ">
+        <div class=" ml-6 max-w-8xl mx-auto flex flex-wrap items-start py-6 px-6 xl:px-0 bg-gray-800" >
+            <div class=" filters pl-5 mt-3 mx-auto w-full lg:w-1/4  xl:pl-10">
                 {% comment %} <h3 class="mb-1 text-xl text-gray-100 uppercase p-3">Search</h3> {% endcomment %}
             
             <form method="get" action=".">
@@ -29,7 +29,7 @@
             {% endfor %}
        <br>
         </div>
-            <div class="text-zinc-100 -mt-4  products w-full lg:w-3/4 flex items-center flex-wrap">
+            <div class="text-zinc-100 products w-full lg:w-3/4 flex items-center flex-wrap">
                 {% for product in products%}
                 {% include 'product/partials/product_list_item.html' %}
                 {% comment %} style="border: 1px solid red;"  {% endcomment %}

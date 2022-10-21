@@ -28,9 +28,9 @@
 {% comment %} 
 w-2/3 md:w-1/4 xl:w-1/4 {% endcomment %}
 
-	<div class="m-2 shadow-md rounded-lg bg-stone-800 dark:border-gray-700 ">
+	<div class="m-2 shadow-md rounded-lg bg-stone-800 border-gray-700 ">
         <a href="{% url 'product' product.slug %}">
-            <img style="height:225px;width:225px;object-fit:contain;"class=" mx-auto bg-stone-200  hover:shadow-lg w-full" src="{{product.get_thumbnail}}" >
+            <img style="height:250px;width:250px;object-fit:contain;"class="mx-auto border-2 border-gray-300  bg-stone-200  hover:shadow-lg w-full" src="{{product.get_thumbnail}}" >
             
         </a>
 			<div class="px-3 pb-5">

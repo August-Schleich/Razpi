@@ -6,16 +6,17 @@
 <div class="max-w-lg mx-auto flex flex-wrap p-6" >
     <div class="w-full bg-gray-100 p-6 rounded-xl">
         <h1 class="mb-6 text-2xl">Log In</h1>
+        <p> Login using RazpiTest or create an account to access site demo.</p>
         <form class="space-y-3" method="post" action=".">
             {% csrf_token %}
               <div>
                 <label>Username</label>
-                <input type="text" name = "username" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" placeholder="Username" required>
+                <input type="text" name = "username" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" value="RazpiTest" placeholder="Username" required>
               </div>
 
               <div>
                 <label>Password</label>
-                <input type="password" name= "password" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" placeholder="Password" required>
+                <input type="password" name= "password" class="form-control w-full mt-2 py-4 px-6 bg-white rounded-xl" value="RaspberryPi777"placeholder="Password" required>
               </div>
 
              

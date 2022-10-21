@@ -46,19 +46,23 @@
         </div>      
        </header>
 
-        <section class="products bg-stone-200 pb-12 max-w-full  xl:px-0 ">
-            <h1 class="text-center text-zinc-800  text-white-600 text-5xl pt-8 md:pt-8 font-medium">New Products</h1>
-            <div class="max-w-7xl  pt-5 pb-5 m-auto items-center ">
-                <div class="products flex flex-wrap pl-14 md:pl-9 "  >
+        <section class=" products bg-stone-200 pb-12 max-w-full  xl:px-0 ">
+            <h1 class="text-center text-zinc-800 text-white-600 text-5xl pt-8 md:pt-8 font-medium">New Products</h1>
+            <div class="max-w-6xl pt-5 pb-5 m-auto  ">
+                <div class="products items-center justify-center flex flex-wrap m-10  "  >
+                    <div class=" flex flex-wrap m-auto items-center justify-center ">
                     {% for product in products %}
-                    {% if forloop.counter < 6 %}
+                    {% if forloop.counter < 5 %}
                     {% include 'product/partials/product_list_item.html' %}
-                    {%endif%}
+                    {% endif %}
                     {% endfor %}
-
+                    </div>
                 </div>
                
             </div>
+            <div class="shop-btn flex items-center justify-center">
+                <a href="{% url 'shop' %}" class=" inline-block bg-blue-800  mt-1 hover:bg-blue-900 text-gray-200 font-bold py-3 px-6 rounded-full" > Shop All Products</a>
+                </div>
         </section>
 
         {% comment %} <header class = "mx-auto max-w-full xl:px-0 bg-stone-800">
