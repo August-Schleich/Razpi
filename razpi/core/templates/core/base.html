@@ -21,7 +21,7 @@
             <a href="{% url 'home' %}"class="py-4 text-3xl text-pink-700 font-semibold"><i class="fa-brands fa-raspberry-pi text-green-700"></i> RazPi</a>
         </div>
         </nav> 
-      <nav class= "border-grey-300 bg-stone-100 ">
+      <nav class= "border-grey-300 bg-stone-100 pr-2 ">
         <div class="max-w-7xl  mx-auto  flex-wrap  px-3 xl:px-0 flex items-center justify-between">
             <div class="menu-left flex items-center space-x-6">
                 {% comment %} <a href="#" class="py-2 text-lg text-pink-700 font-semibold">RazPi</a> {% endcomment %}
@@ -30,11 +30,11 @@
                 <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="{% url 'about' %}">About</a></li>
                 </ul>
             </div>
-            <div class="menu-right flex items-center space-x-4 ">
-               <ul class="flex">
+            <div class="menu-right flex items-center space-x-3 relative ">
+               <ul class="flex ">
                 {% if request.user.is_authenticated %}
                 <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="{% url 'logout' %}">Logout</a></li>
-                {%else %}
+                {% else %}
                 <li class="hover:bg-stone-700  hover:text-white px-3 py-3"><a href="{% url 'login' %}">Login</a></li>
                 {% endif %}
                 </ul> 
