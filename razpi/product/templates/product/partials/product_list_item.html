@@ -1,11 +1,11 @@
 <div class="m-2 flex-wrap shadow-md rounded-lg  bg-stone-800 border-gray-70 ">
         <a href="{% url 'product' product.slug %}">
-            <img style="object-fit:contain;" class="w-32 h-28 md:h-40 md:w-48   mx-auto border-2 border-gray-300  bg-stone-200  hover:shadow-lg " src="{{product.get_thumbnail}}" >
+            <img style="object-fit:contain;" class="w-36 h-32 md:h-40 md:w-48   mx-auto border-2 border-gray-300  bg-stone-200  hover:shadow-lg " src="{{product.get_thumbnail}}" >
             
         </a>
 			<div class="px-0 pb-0 md:px-3 md:pb-5">
                 <a 
-                 href="{% url 'product' product.slug %}" ><h2 class="m-1 wrap flex-wrap text-gray-200 pt-1 text-sm md:text-xl tracking-tight dark:text-white">{{product.name}}</h2></a>
+                 href="{% url 'product' product.slug %}" ><h2 class="m-1 wrap flex-wrap text-gray-200 pt-1 text-xs md:text-lg tracking-tight dark:text-white">{{product.name}}</h2></a>
 			
 				<div class=" mb-3">
 					
@@ -18,7 +18,7 @@
                     hx-get="{% url 'add_to_cart' product.id %}"
                     hx-target="#menu-cart-button"
                     hx-swap="outerHTML"
-                    class="text-white bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-xs md:text-sm p-1 py-1 md:px-1.5 md:py-1.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-pink-800">Add
+                    class="text-white  bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-xs mb-1 md:mb-0 md:text-sm px-1 py-1 md:px-1.5 md:py-1.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-pink-800">Add
 						to cart</a>
                     
 				</div>
